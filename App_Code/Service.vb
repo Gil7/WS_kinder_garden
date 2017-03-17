@@ -266,6 +266,7 @@ Public Class Service
         tblConsumption.find_consumption(Register.consumo_menu_estudiante, id)
         Return Register
     End Function
+    <WebMethod()> _
     Public Function WS_update_consumption(matricula As String, menu_id As String, fecha As String, id As Integer) As String
         Dim tblConsumption As New consumo_menu_estudianteTableAdapter
         tblConsumption.update_consumption(matricula, menu_id, fecha, id)
@@ -292,17 +293,20 @@ Public Class Service
         tblIngredient.create_ingredient(nombre)
         Return "success"
     End Function
+    <WebMethod()> _
     Public Function WS_find_ingredient(id As Integer) As Datos
         Dim tblIngredients As New ingredienteTableAdapter
         Dim Register As New Datos
         tblIngredients.find_ingredient(Register.ingrediente, id)
         Return Register
     End Function
-    Public Function WS_update_ingredient(nombre As String, id aas integer) As String
+    <WebMethod()> _
+    Public Function WS_update_ingredient(nombre As String, id As Integer) As String
         Dim tblIngredient As New ingredienteTableAdapter
         tblIngredient.update_ingredient(nombre, id)
         Return "success"
     End Function
+    <WebMethod()> _
     Public Function WS_delete_ingredient(id As Integer) As String
         Dim tblIngredient As New ingredienteTableAdapter
         tblIngredient.create_ingredient(id)
@@ -322,18 +326,20 @@ Public Class Service
         tblIngredient_Saucer.create_ingredient_saucer(plato_id, ingrediente)
         Return "success"
     End Function
+    <WebMethod()> _
     Public Function WS_find_ingredient_saucer(id As Integer) As Datos
         Dim tblIngredientes_Saucers As New ingrediente_platoTableAdapter
         Dim Register As New Datos
         tblIngredientes_Saucers.find_ingredient_saucer(Register.ingrediente_plato, id)
         Return Register
     End Function
-
+    <WebMethod()> _
     Public Function WS_update_ingredient_saucer(plato_id As Integer, ingrediente As Integer, id As Integer) As String
         Dim tblIngredient_Saucer As New ingrediente_platoTableAdapter
         tblIngredient_Saucer.update_ingredient_saucer(plato_id, ingrediente, id)
         Return "success"
     End Function
+    <WebMethod()> _
     Public Function WS_delete_ingredient_saucer(id As Integer) As String
         Dim tblIngredient_Saucer As New ingrediente_platoTableAdapter
         tblIngredient_Saucer.delete_ingredient_saucer(id)
@@ -355,18 +361,21 @@ Public Class Service
         Return "success"
 
     End Function
+    <WebMethod()> _
     Public Function WS_find_allergy(id As Integer) As Datos
         Dim tblAlergies As New ingrediente_alergico_estudianteTableAdapter
         Dim Register As New Datos
         tblAlergies.find_alergy(Register.ingrediente_alergico_estudiante, id)
         Return Register
     End Function
+    <WebMethod()> _
     Public Function WS_update_alergy(matricula As String, ingrediente As Integer, id As Integer) As String
         Dim tblAlergy As New ingrediente_alergico_estudianteTableAdapter
         tblAlergy.update_alergy(matricula, ingrediente, id)
         Return "success"
 
     End Function
+    <WebMethod()> _
     Public Function WS_delete_alergy(id As Integer) As String
         Dim tblAlergy As New ingrediente_alergico_estudianteTableAdapter
         tblAlergy.delete_alergy(id)
